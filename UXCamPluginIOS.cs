@@ -75,6 +75,9 @@ namespace Plugins.UXCam
         [DllImport("__Internal")]
         private static extern string urlForCurrentUser();
 
+        [DllImport("__Internal")]
+        private static extern void startNewSession();
+
 
         public static void StartWithKey(string key)
         {
@@ -98,6 +101,12 @@ namespace Plugins.UXCam
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
                 startWithKeyCallback(key, objectName, objectMethod);
+        }
+
+        public static void StartNewSession()
+        {
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+                startNewSession();
         }
 
         public static void HideSensitiveScreen(bool hide)

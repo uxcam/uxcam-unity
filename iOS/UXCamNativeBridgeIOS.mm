@@ -26,6 +26,10 @@ extern "C" {
         }];
     }
 
+    void startNewSession(){
+        [UXCam startNewSession];
+    }
+
     const char* convertToCString(const NSString* nsString)
     {
         if (nsString == NULL)
