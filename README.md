@@ -20,8 +20,10 @@ Inside your exported Xcode project, on **Build Phases -> Link Binary With Librar
 >Coming soon
 
 ## Usage
-On your C# script.
-`using Plugins.UXCam;`
+On your C# script, import
+```
+using Plugins.UXCam;
+```
 
 For starting session
 ```
