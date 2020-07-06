@@ -78,10 +78,20 @@ namespace Plugins.UXCam
         [DllImport("__Internal")]
         private static extern void startNewSession();
 
+        [DllImport("__Internal")]
+        private static extern void disableCrashHandling(bool disable);
+
+        [DllImport("__Internal")]
+        private static extern void addPluginType(string type, string version);
+
+        [DllImport("__Internal")]
+        private static extern void logEventWithProperties(string eventName, string eventProperties);
+
 
         public static void StartWithKey(string key)
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
+                //addPluginType("unity", "0.0.1");
                 startWithKey(key);
         }
 
@@ -238,11 +248,20 @@ namespace Plugins.UXCam
         }
 
         /// <summary>
-        /// TODO: Not supported at the moment
+        /// Log event name and its associated properties
         /// </summary>
-        public static void LogEventWithProps()
+        /// <param name="eventName">Name of the event</param>
+        /// <param name="eventProperties">Event properties. Stringify dictionary or object for multitple properties</param>
+        public static void LogEventWithProperties(string eventName, string eventProperties)
         {
-            if (Application.platform == RuntimePlatform.IPhonePlayer) { }
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+                logEventWithProperties(eventName, eventProperties);
+        }
+
+        public static void DisableCrashHanding(bool disable)
+        {
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+                disableCrashHandling(disable);
         }
     }
 }

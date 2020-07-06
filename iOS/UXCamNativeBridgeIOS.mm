@@ -70,6 +70,13 @@ extern "C" {
         [UXCam logEvent:[NSString stringWithUTF8String:eventName]];
     }
 
+    void logEventWithProperties(const char* eventName, const char* properties){
+        
+        NSString* eName = [NSString stringWithUTF8String:eventName];
+        NSString* eProps = [NSString stringWithUTF8String:properties];
+        [UXCam logEvent:eName withProperties:@{@"props": eProps}];
+    }
+
     void setAutomaticScreenTagging(bool isEnabled){
         [UXCam setAutomaticScreenNameTagging:isEnabled];
     }
@@ -128,6 +135,14 @@ extern "C" {
         [UXCam uploadingPendingSessions:^{
             UnitySendMessage([objName UTF8String], [objMethod UTF8String], "");
         }];
+    }
+
+    void disableCrashHandling(bool disable){
+        [UXCam disableCrashHandling:disable];
+    }
+
+    void addPluginType(const char* type, const char* version){
+        [UXCam pluginType:[NSString stringWithUTF8String:type] version:[NSString stringWithUTF8String:version]];
     }
 
 }
