@@ -110,6 +110,7 @@ namespace Plugins.UXCam
         public static void StartWithKeyCallback(string key, string objectName, string objectMethod)
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
+                //addPluginType("unity", "0.0.1");
                 startWithKeyCallback(key, objectName, objectMethod);
         }
 
@@ -216,6 +217,9 @@ namespace Plugins.UXCam
                 deletePendingUploads();
         }
 
+        /// <summary>
+        /// IOS only
+        /// </summary>
         public static void UploadPendingSession()
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
@@ -223,7 +227,7 @@ namespace Plugins.UXCam
         }
 
         /// <summary>
-        /// Gives callback when session upload completes on objectMethod. Note: Won't trigger if object not active/destroyed
+        /// IOS only. Gives callback when session upload completes on objectMethod. Note: Won't trigger if object not active/destroyed
         /// </summary>
         /// <param name="objectName">Name of the object currently active in scene</param>
         /// <param name="objectMethod">Method inside script attached to the object</param>
@@ -254,10 +258,17 @@ namespace Plugins.UXCam
         /// <param name="eventProperties">Event properties. Stringify dictionary or object for multitple properties</param>
         public static void LogEventWithProperties(string eventName, string eventProperties)
         {
+            if (eventProperties == null)
+                return;
+
             if (Application.platform == RuntimePlatform.IPhonePlayer)
                 logEventWithProperties(eventName, eventProperties);
         }
 
+        /// <summary>
+        /// For ios only. Not available for android
+        /// </summary>
+        /// <param name="disable"></param>
         public static void DisableCrashHanding(bool disable)
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
