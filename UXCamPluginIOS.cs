@@ -169,7 +169,7 @@ namespace Plugins.UXCam
         }
 
         /// <summary>
-        /// Gives callback when session upload completes on objectMethod. Note: Won't trigger if object not active/destroyed
+        /// IOS only. Gives callback when session upload completes on objectMethod. Note: Won't trigger if object not active/destroyed
         /// </summary>
         /// <param name="objectName">Name of the object currently active in scene</param>
         /// <param name="objectMethod">Method inside script attached to the object</param>
