@@ -5,7 +5,7 @@
 
 ### iOS
 
-- Add content of iOS directory inside your Assets/Plugins/iOS
+- Add content of the iOS directory to your Assets/Plugins/iOS
 - Add UXCamPluginIOS.cs and UXCamUnity.cs file inside your Assets/Plugins (recommended)
 - Make sure **iOS** is selected as plugin platform on **Inspector window**
 
@@ -30,7 +30,7 @@ On your C# script, import
 using Plugins.UXCam;
 ```
 
-For starting session
+For starting a session
 ```
 UXCam.OptIntoSchematicRecordings();
 UXCam.StartWithKey("APP_KEY");
