@@ -20,8 +20,9 @@ extern "C" {
         
         [UXCam startWithKey:[NSString stringWithUTF8String:appKey] buildIdentifier:nil completionBlock:^(BOOL started) {
             if (started){
-                const char* url = [[UXCam urlForCurrentSession] UTF8String];
-                UnitySendMessage([objName UTF8String], [objMethod UTF8String], url);
+                UnitySendMessage([objName UTF8String], [objMethod UTF8String], "true");
+            }else{
+                UnitySendMessage([objName UTF8String], [objMethod UTF8String], "UXCam: Failed to start session");
             }
         }];
     }
