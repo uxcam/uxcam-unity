@@ -10,6 +10,7 @@ extern "C" {
     }
 
     void startWithKey(const char* appKey){
+        [UXCam pluginType:@"unity" version:@"0.0.1"];
         [UXCam startWithKey:[NSString stringWithUTF8String:appKey]];
     }
 
@@ -18,6 +19,7 @@ extern "C" {
         NSString* objName = [NSString stringWithUTF8String:objectName];
         NSString* objMethod = [NSString stringWithUTF8String:objectMethod];
         
+        [UXCam pluginType:@"unity" version:@"0.0.1"];
         [UXCam startWithKey:[NSString stringWithUTF8String:appKey] buildIdentifier:nil completionBlock:^(BOOL started) {
             if (started){
                 UnitySendMessage([objName UTF8String], [objMethod UTF8String], "true");
@@ -140,10 +142,6 @@ extern "C" {
 
     void disableCrashHandling(bool disable){
         [UXCam disableCrashHandling:disable];
-    }
-
-    void addPluginType(const char* type, const char* version){
-        [UXCam pluginType:[NSString stringWithUTF8String:type] version:[NSString stringWithUTF8String:version]];
     }
 
 }

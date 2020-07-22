@@ -16,7 +16,7 @@ namespace Plugins.UXCam{
             AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
             if (Application.platform == RuntimePlatform.Android)
-                //jc.CallStatic("pluginType", "unity", "0.0,1");
+                jc.CallStatic("pluginType", "unity", "0.0.1");
                 jc.CallStatic("startApplicationWithKeyForCordova", activity, key);
         }
 
@@ -31,7 +31,6 @@ namespace Plugins.UXCam{
         public static void StartWithKeyCallback(string key, string objectName, string objectMethod)
         {
             if (Application.platform == RuntimePlatform.Android)
-                //jc.CallStatic("pluginType", "unity", "0.0,1");
                 StartWithKey(key);
                 jw.CallStatic("onVerificationListener", objectName, objectMethod);
         }

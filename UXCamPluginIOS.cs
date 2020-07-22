@@ -82,16 +82,12 @@ namespace Plugins.UXCam
         private static extern void disableCrashHandling(bool disable);
 
         [DllImport("__Internal")]
-        private static extern void addPluginType(string type, string version);
-
-        [DllImport("__Internal")]
         private static extern void logEventWithProperties(string eventName, string eventProperties);
 
 
         public static void StartWithKey(string key)
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
-                //addPluginType("unity", "0.0.1");
                 startWithKey(key);
         }
 
@@ -110,7 +106,6 @@ namespace Plugins.UXCam
         public static void StartWithKeyCallback(string key, string objectName, string objectMethod)
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
-                //addPluginType("unity", "0.0.1");
                 startWithKeyCallback(key, objectName, objectMethod);
         }
 
