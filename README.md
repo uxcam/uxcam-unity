@@ -40,7 +40,7 @@ UXCam.StartWithKey("APP_KEY");
 API | iOS | Android | Description
 ----|----|----|----
 StartWithKey | Yes | Yes | Start session with app key
-StartWithKeyCallback | Yes | Yes | Start session with success/failure callback
+StartWithKeyCallback | Yes | Yes | Start session with success/failure callback. Returns string value "true" on success
 StartNewSession | Yes | Yes | Start new session
 HideSensitiveScreen | Yes | Yes | Hide/unhide screen while sensitive view is present
 HideSensitiveScreenWithoutGestures | Yes | Yes | Hide/unhide screen along with gestures
