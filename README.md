@@ -19,7 +19,7 @@ Inside your exported Xcode project, on **Build Phases -> Link Binary With Librar
 >Make sure **libz.tbd** has *UnityFramework* set as *Target Membership*
 
 ### Android (not fully supported)
-- Add content of Android directory inside your Assets/Plugins/Android
+- Add content of the Android directory to your Assets/Plugins/Android
 - Add UXCamPluginAndroid.cs and UXCamUnity.cs file inside your Assets/Plugins (recommended)
 - Make sure **Android** is selected as plugin platform on **Inspector window**
 >If you see any missing library error logs in android, make sure to add them in your module dependencies
@@ -40,7 +40,7 @@ UXCam.StartWithKey("APP_KEY");
 API | iOS | Android | Description
 ----|----|----|----
 StartWithKey | Yes | Yes | Start session with app key
-StartWithKeyCallback | Yes | Yes | Start session with success/failure callback
+StartWithKeyCallback | Yes | Yes | Start session with success/failure callback. Returns string value "true" on success
 StartNewSession | Yes | Yes | Start new session
 HideSensitiveScreen | Yes | Yes | Hide/unhide screen while sensitive view is present
 HideSensitiveScreenWithoutGestures | Yes | Yes | Hide/unhide screen along with gestures
