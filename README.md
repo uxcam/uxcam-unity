@@ -19,6 +19,8 @@ Inside your exported Xcode project, on **Build Phases -> Link Binary With Librar
 >Make sure **libz.tbd** has *UnityFramework* set as *Target Membership*
 
 ### Android (not fully supported)
+>We don't support screen capture for Android yet. The rest of the features like gestures, events, etc. will still work.
+
 - Add content of the Android directory to your Assets/Plugins/Android
 - Add UXCamPluginAndroid.cs and UXCamUnity.cs file inside your Assets/Plugins (recommended)
 - Make sure **Android** is selected as plugin platform on **Inspector window**

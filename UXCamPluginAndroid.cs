@@ -23,7 +23,7 @@ namespace Plugins.UXCam{
         public static void OptIntoSchematicRecordings(){}
 
         /// <summary>
-        /// Gives callback with session url when session starts successfully on objectMethod. Note: Won't trigger if object not active/destroyed
+        /// Gives callback with verification status when session starts successfully on objectMethod. Note: Won't trigger if object not active/destroyed
         /// </summary>
         /// <param name="key">App key</param>
         /// <param name="objectName">Name of the object currently active in scene</param>
