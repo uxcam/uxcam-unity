@@ -10,7 +10,7 @@ extern "C" {
     }
 
     void startWithKey(const char* appKey){
-        [UXCam pluginType:@"unity" version:@"0.0.1"];
+        [UXCam pluginType:@"unity" version:@"0.0.2"];
         [UXCam startWithKey:[NSString stringWithUTF8String:appKey]];
     }
 
@@ -19,8 +19,8 @@ extern "C" {
         NSString* objName = [NSString stringWithUTF8String:objectName];
         NSString* objMethod = [NSString stringWithUTF8String:objectMethod];
         
-        [UXCam pluginType:@"unity" version:@"0.0.1"];
-        [UXCam startWithKey:[NSString stringWithUTF8String:appKey] buildIdentifier:nil completionBlock:^(BOOL started) {
+        [UXCam pluginType:@"unity" version:@"0.0.2"];
+        [UXCam startWithKey:[NSString stringWithUTF8String:appKey] completionBlock:^(BOOL started) {
             if (started){
                 UnitySendMessage([objName UTF8String], [objMethod UTF8String], "true");
             }else{
@@ -142,6 +142,21 @@ extern "C" {
 
     void disableCrashHandling(bool disable){
         [UXCam disableCrashHandling:disable];
+    }
+
+    void setPushNotificationToken(const char* token){
+        [UXCam setPushNotificationToken:[NSString stringWithUTF8String:token]];
+    }
+
+    void reportBugEventWithProperties(const char* eventName, const char* properties){
+        NSString* eName = [NSString stringWithUTF8String:eventName];
+        NSString* eProps = [NSString stringWithUTF8String:properties];
+        
+        [UXCam reportBugEvent:eName properties:@{@"props": eProps}];
+    }
+
+    void reportBugEvent(const char* eventName){
+        [UXCam reportBugEvent:[NSString stringWithUTF8String:eventName] properties:nil];
     }
 
 }

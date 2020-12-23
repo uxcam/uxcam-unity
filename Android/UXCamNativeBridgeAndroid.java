@@ -24,4 +24,10 @@ public class UXCamNativeBridgeAndroid {
         mp.put("props", properties);
         UXCam.logEvent(eventName, mp);
     }
+
+    public static void reportBugEvent(String eventName, String properties){
+        Map<String, String> mp = new HashMap<String, String>();
+        mp.put("props", properties);
+        UXCam.reportBugEvent(eventName, mp);
+    }
 }

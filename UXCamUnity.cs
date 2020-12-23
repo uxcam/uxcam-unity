@@ -94,6 +94,25 @@ namespace Plugins.UXCam
         /// </summary>
         /// <param name="disable"></param>
         public static void DisableCrashHanding(bool disable) { }
+
+        /// <summary>
+        /// Set push notification token
+        /// </summary>
+        /// <param name="token">Device token for push notification</param>
+        public static void SetPushNotificationToken(string token) { }
+
+        /// <summary>
+        /// Report bug event
+        /// </summary>
+        /// <param name="eventName">Bug event name</param>
+        public static void ReportBugEvent(string eventName) { }
+
+        /// <summary>
+        /// Report bug event with properties
+        /// </summary>
+        /// <param name="eventName">Bug event name</param>
+        /// <param name="properties">Bug event properties</param>
+        public static void ReportBugEventWithProperties(string eventName, string properties) { }
     }
 }
 

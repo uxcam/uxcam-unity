@@ -84,6 +84,15 @@ namespace Plugins.UXCam
         [DllImport("__Internal")]
         private static extern void logEventWithProperties(string eventName, string eventProperties);
 
+        [DllImport("__Internal")]
+        private static extern void setPushNotificationToken(string token);
+
+        [DllImport("__Internal")]
+        private static extern void reportBugEvent(string eventName);
+
+        [DllImport("__Internal")]
+        private static extern void reportBugEventWithProperties(string eventName, string properties);
+
 
         public static void StartWithKey(string key)
         {
@@ -268,6 +277,37 @@ namespace Plugins.UXCam
         {
             if (Application.platform == RuntimePlatform.IPhonePlayer)
                 disableCrashHandling(disable);
+        }
+
+        /// <summary>
+        /// Set push notification token
+        /// </summary>
+        /// <param name="token">Device token for push notification</param>
+        public static void SetPushNotificationToken(string token)
+        {
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+                setPushNotificationToken(token);
+        }
+
+        /// <summary>
+        /// Report bug event
+        /// </summary>
+        /// <param name="eventName">Bug event name</param>
+        public static void ReportBugEvent(string eventName)
+        {
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+                reportBugEvent(eventName);
+        }
+
+        /// <summary>
+        /// Report bug event with properties
+        /// </summary>
+        /// <param name="eventName">Bug event name</param>
+        /// <param name="properties">Bug event properties</param>
+        public static void ReportBugEventWithProperties(string eventName, string properties)
+        {
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+                reportBugEventWithProperties(eventName, properties);
         }
     }
 }

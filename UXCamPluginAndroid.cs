@@ -16,7 +16,7 @@ namespace Plugins.UXCam{
             AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
             if (Application.platform == RuntimePlatform.Android)
-                jc.CallStatic("pluginType", "unity", "0.0.1");
+                jc.CallStatic("pluginType", "unity", "0.0.2");
                 jc.CallStatic("startApplicationWithKeyForCordova", activity, key);
         }
 
@@ -179,6 +179,40 @@ namespace Plugins.UXCam{
         /// </summary>
         /// <param name="disable"></param>
         public static void DisableCrashHanding(bool disable){ }
+
+        /// <summary>
+        /// Set push notification token
+        /// </summary>
+        /// <param name="token">Device token for push notification</param>
+        public static void SetPushNotificationToken(string token)
+        {
+            if (Application.platform == RuntimePlatform.Android)
+                jc.CallStatic("setPushNotificationToken", token);
+        }
+
+        /// <summary>
+        /// Report bug event
+        /// </summary>
+        /// <param name="eventName">Bug event name</param>
+        public static void ReportBugEvent(string eventName)
+        {
+            if (Application.platform == RuntimePlatform.Android)
+                jc.CallStatic("reportBugEvent", eventName);
+        }
+
+        /// <summary>
+        /// Report bug event with properties
+        /// </summary>
+        /// <param name="eventName">Bug event name</param>
+        /// <param name="properties">Bug event properties</param>
+        public static void ReportBugEventWithProperties(string eventName, string properties)
+        {
+            if (properties == null)
+                return;
+
+            if (Application.platform == RuntimePlatform.Android)
+                jw.CallStatic("reportBugEvent", eventName, properties);
+        }
     }
 }
 
