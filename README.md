@@ -7,22 +7,19 @@
 
 - Add content of the iOS directory to your Assets/Plugins/iOS
 - Add UXCamPluginIOS.cs and UXCamUnity.cs file inside your Assets/Plugins (recommended)
-- Make sure **iOS** is selected as plugin platform on **Inspector window**
+- Download the latest iOS SDK from [here](https://github.com/uxcam/ios-sdk/raw/main/UXCam.xcframework.zip). Copy this file to your xcode project folder.
 
-Inside **Inspector window -> Framework dependencies** for *UXCam.framework*, select: 
-- Core Telephony
-- MobileCoreServices
-- Security
-- WebKit
-
-Inside your exported Xcode project, on **Build Phases -> Link Binary With Libraries** add **libz.tbd**.
->Make sure **libz.tbd** has *UnityFramework* set as *Target Membership*
+Inside your exported Xcode project, on **Build Phases -> Link Binary With Libraries**, add
+- UXCam.xcframework (You might need to change your project build system from **legacy** to **new** to support xcframework).
+- libz.tbd.
+>Make sure **libz.tbd** and **UXCam.xcframework** has *UnityFramework* set as *Target Membership*
 
 ### Android (not fully supported)
 >We don't support screen capture for Android yet. The rest of the features like gestures, events, etc. will still work.
 
 - Add content of the Android directory to your Assets/Plugins/Android
 - Add UXCamPluginAndroid.cs and UXCamUnity.cs file inside your Assets/Plugins (recommended)
+- Download the latest android SDK from [here](https://s3-eu-west-1.amazonaws.com/sdk.uxcam.com/android/com/uxcam/uxcam/3.3.3/uxcam-3.3.3.aar). Place the downloaded AAR file inside Assets/Plugins/Android
 - Make sure **Android** is selected as plugin platform on **Inspector window**
 >If you see any missing library error logs in android, make sure to add them in your module dependencies
 
