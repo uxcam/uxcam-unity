@@ -19,7 +19,7 @@ Inside your exported Xcode project, on **Build Phases -> Link Binary With Librar
 
 - Add content of the Android directory to your Assets/Plugins/Android
 - Add UXCamPluginAndroid.cs and UXCamUnity.cs file inside your Assets/Plugins (recommended)
-- Download the latest android SDK from [here](https://s3-eu-west-1.amazonaws.com/sdk.uxcam.com/android/com/uxcam/uxcam/3.3.3/uxcam-3.3.3.aar). Place the downloaded AAR file inside Assets/Plugins/Android
+- Download the latest android SDK from [here](https://s3-eu-west-1.amazonaws.com/sdk.uxcam.com/android/com/uxcam/uxcam/3.3.4/uxcam-3.3.4.aar). Place the downloaded AAR file inside Assets/Plugins/Android
 - Make sure **Android** is selected as plugin platform on **Inspector window**
 >If you see any missing library error logs in android, make sure to add them in your module dependencies
 
