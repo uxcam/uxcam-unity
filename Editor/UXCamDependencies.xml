@@ -1,0 +1,22 @@
+<dependencies>
+
+    <iosPods>
+        <iosPod name="UXCam"
+                minTargetSdk="10.0">
+            <sources>
+                <source>https://github.com/CocoaPods/Specs</source>
+            </sources>
+        </iosPod>
+    </iosPods>
+
+    <androidPackages>
+        <androidPackage spec="com.uxcam:uxcam:3.3.6@aar">
+            <repositories>
+                <repository>https://sdk.uxcam.com/android/</repository>
+            </repositories>
+        </androidPackage>
+        <androidPackage spec="com.google.android.gms:play-services-maps:17.0.1"/>
+        <androidPackage spec="com.squareup.okhttp3:okhttp:4.8.1"/>
+    </androidPackages>
+
+</dependencies>
